@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Driving+History">Driving History</a>
+    <li><a href="#label-Assumptions">Assumptions</a>
+    <li><a href="#label-Running+this+Application">Running this Application</a>
+    <li><a href="#label-Running+Application+Tests">Running Application Tests</a>
+    <li><a href="#label-TODO">TODO</a>
+    <li><a href="#label-Problem+Statement">Problem Statement</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./data/testinput_txt.html">testinput</a>
+  
+    <li><a href="./data/testinput2_txt.html">testinput2</a>
+  
+    <li><a href="./drivinghistory_gemspec.html">drivinghistory.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Driving+History">Driving History<span><a href="#label-Driving+History">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This application is designed to solve the problem given at <a
+href="https://gist.github.com/dan-manges/1e1854d0704cb9132b74">gist.github.com/dan-manges/1e1854d0704cb9132b74</a></p>
+
+<p>The application uses inputs to build a driving history database containing
+drivers and their respective trips and then outputs a report containing
+aggregate data of all drivers.</p>
+
+<p>The full problem statement is specified at the bottom of this page</p>
+
+<h3 id="label-Assumptions">Assumptions<span><a href="#label-Assumptions">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The following are assumptions that may or may not be explicitly specified
+within the problem statement</p>
+<ol><li>
+<p>All input is clean and free of typing errors</p>
+</li><li>
+<p>New drivers will always be specified before their respective trips</p>
+</li><li>
+<p>A driver will be declared only one time, all names are unique</p>
+</li><li>
+<p>All trip stop_times are greater than start_times</p>
+</li><li>
+<p>All trip miles_driven values are positive</p>
+</li><li>
+<p>A trip must be associated with a previously defined driver</p>
+</li></ol>
+
+<h3 id="label-Running+this+Application">Running this Application<span><a href="#label-Running+this+Application">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This application was written and tested using Ruby version 2.2.2p95</p>
+
+<p>To run this application, pipe input via stdin using the command format
+below while residing in the /drivinghistory/ directory.</p>
+
+<pre>cat input.txt | ruby bin/app.rb</pre>
+
+<h3 id="label-Running+Application+Tests">Running Application Tests<span><a href="#label-Running+Application+Tests">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>While inside the top-level /drivinghistory/ directory, run the following
+command</p>
+
+<pre class="ruby"><span class="ruby-identifier">rake</span> <span class="ruby-identifier">test</span>
+</pre>
+
+<h3 id="label-TODO">TODO<span><a href="#label-TODO">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The following items would be next-steps for future development on this
+application, time permitting</p>
+<ol><li>
+<p>Clean up rdoc, make it look pretty and improve navigation</p>
+</li><li>
+<p>Clean up gemspec</p>
+</li><li>
+<p>Add error detection/handling for bad input</p>
+</li><li>
+<p>Add negative-test cases</p>
+</li></ol>
+
+<h3 id="label-Problem+Statement">Problem Statement<span><a href="#label-Problem+Statement">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>We&#39;re going to write some code to track driving history for people.</p>
+
+<p>The code will process an input file. You can either choose to accept the
+input via stdin (e.g. <code>cat input.txt | ruby yourcode.rb</code>), or as
+a file name given on the command line (e.g. <code>ruby yourcode.rb
+input.txt</code>).</p>
+
+<p>Each line in the input file will start with a command. There are two
+possible commands.</p>
+
+<p>The first command is <a href="Driver.html">Driver</a>, which will register
+a new <a href="Driver.html">Driver</a> in the app. Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Driver</span> <span class="ruby-constant">Dan</span>
+</pre>
+
+<p>The second command is <a href="Trip.html">Trip</a>, which will record a
+trip attributed to a driver. The line will be space delimited with the
+following fields: the command (Trip), driver name, start time, stop time,
+miles driven. Times will be given in the format of hours:minutes. We&#39;ll
+use a 24-hour clock and will assume that drivers never drive past midnight
+(the start time will always be before the end time). Example:</p>
+
+<pre>Trip Dan 07:15 07:45 17.3</pre>
+
+<p>Discard any trips that average a speed of less than 5 mph or greater than
+100 mph.</p>
+
+<p>Generate a report containing each driver with total miles driven and
+average speed. Sort the output by most miles driven to least. Round miles
+and miles per hour to the nearest integer.</p>
+
+<p>Example input:</p>
+
+<pre>Driver Dan
+Driver Alex
+Driver Ilya
+Trip Dan 07:15 07:45 17.3
+Trip Dan 06:12 06:32 12.9
+Trip Alex 12:01 13:16 42.0</pre>
+
+<p>Expected output:</p>
+
+<pre>Alex: 42 miles @ 34 mph
+Dan: 30 miles @ 36 mph
+Ilya: 0 miles</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

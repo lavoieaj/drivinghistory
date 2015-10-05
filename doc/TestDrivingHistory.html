@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestDrivingHistory - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Test::Unit::TestCase
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-test_discard_trip_outliers">#test_discard_trip_outliers</a>
+    
+    <li ><a href="#method-i-test_init">#test_init</a>
+    
+    <li ><a href="#method-i-test_parse_command">#test_parse_command</a>
+    
+    <li ><a href="#method-i-test_sort_drivers">#test_sort_drivers</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestDrivingHistory">
+  <h1 id="class-TestDrivingHistory" class="class">
+    class TestDrivingHistory
+  </h1>
+
+  <section class="description">
+    
+<p>This class tests functionality of the <a
+href="DrivingHistory.html">DrivingHistory</a> class and it&#39;s methods</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-test_discard_trip_outliers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_discard_trip_outliers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the DrvingHistory discard_trip_outliers function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="DrivingHistory.html">DrivingHistory</a> object</p>
+</li><li>
+<p>Create a new <a href="Driver.html">Driver</a></p>
+</li><li>
+<p>Create 3 new <a href="Trip.html">Trip</a>, two of which fall outside the
+outlier boundary designated to be &lt; 5 mph and &gt; 100 mph</p>
+</li><li>
+<p>Call discard_trip_outliers</p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>Only one <a href="Trip.html">Trip</a> remains</p>
+</li><li>
+<p>The remaining <a href="Trip.html">Trip</a> lies within the outlier
+boundaries</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_discard_trip_outliers-source">
+            <pre><span class="ruby-comment"># File tests/test_drivinghistory.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_discard_trip_outliers</span>
+  <span class="ruby-identifier">history</span> = <span class="ruby-constant">DrivingHistory</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].
+    <span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;3.4&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].
+    <span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;14:35&quot;</span>, <span class="ruby-string">&quot;68.3&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].
+    <span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;14:35&quot;</span>, <span class="ruby-string">&quot;15:35&quot;</span>, <span class="ruby-string">&quot;105.2&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">discard_trip_outliers</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">trips</span>.<span class="ruby-identifier">length</span>, <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">trips</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">avg_speed</span>, <span class="ruby-value">68.3</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_init</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the DrvingHistory initialize function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="DrivingHistory.html">DrivingHistory</a> object</p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The object contains an empty <a href="Driver.html">Driver</a> array</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_init-source">
+            <pre><span class="ruby-comment"># File tests/test_drivinghistory.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_init</span>
+  <span class="ruby-identifier">history</span> = <span class="ruby-constant">DrivingHistory</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_parse_command" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_parse_command</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the DrvingHistory parse_command function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="DrivingHistory.html">DrivingHistory</a> object</p>
+</li><li>
+<p>Add a new <a href="Driver.html">Driver</a> via parse_command</p>
+</li><li>
+<p>Add multiple <a href="Trip.html">Trip</a> to the driver via parse_command</p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The object contains a <a href="Driver.html">Driver</a> named “Alex”</p>
+</li><li>
+<p>The <a href="Driver.html">Driver</a> contains the first <a
+href="Trip.html">Trip</a></p>
+</li><li>
+<p>The <a href="Driver.html">Driver</a> contains the second <a
+href="Trip.html">Trip</a></p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_parse_command-source">
+            <pre><span class="ruby-comment"># File tests/test_drivinghistory.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_parse_command</span>
+  <span class="ruby-identifier">history</span> = <span class="ruby-constant">DrivingHistory</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">parse_command</span>(<span class="ruby-string">&quot;Driver Alex&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">parse_command</span>(<span class="ruby-string">&quot;Trip Alex 12:01 13:16 42.0&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">parse_command</span>(<span class="ruby-string">&quot;Trip Alex 14:05 15:16 62.4&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">trips</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">miles_driven</span>, <span class="ruby-value">42.0</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">trips</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">miles_driven</span>, <span class="ruby-value">62.4</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_sort_drivers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_sort_drivers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the DrvingHistory sort_drivers function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="DrivingHistory.html">DrivingHistory</a> object</p>
+</li><li>
+<p>Create 2 new <a href="Driver.html">Driver</a>, “Alex” and “Greg”</p>
+</li><li>
+<p>Create 2 <a href="Trip.html">Trip</a>, one for each new <a
+href="Driver.html">Driver</a> with different miles_driven such that the
+second driver has driven more miles than the first</p>
+</li><li>
+<p>Call sort_drivers</p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The drivers have been re-ordered such that the <a
+href="Driver.html">Driver</a> who</p>
+</li></ul>
+</li></ul>
+
+<p>has driven the most amount of miles now appears first in the list</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_sort_drivers-source">
+            <pre><span class="ruby-comment"># File tests/test_drivinghistory.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_sort_drivers</span>
+  <span class="ruby-identifier">history</span> = <span class="ruby-constant">DrivingHistory</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Greg&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].
+    <span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;53.4&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">1</span>].
+    <span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Greg&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;83.4&quot;</span>)
+  <span class="ruby-identifier">history</span>.<span class="ruby-identifier">sort_drivers</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">history</span>.<span class="ruby-identifier">drivers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Greg&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

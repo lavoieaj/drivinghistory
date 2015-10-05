@@ -1,0 +1,13 @@
+Mon, 05 Oct 2015 11:58:42 -0400
+./README.md	Mon, 05 Oct 2015 11:00:11 -0400
+./Rakefile	Sat, 03 Oct 2015 12:59:39 -0400
+./drivinghistory.gemspec	Mon, 05 Oct 2015 10:59:17 -0400
+./tests/test_driver.rb	Mon, 05 Oct 2015 00:46:49 -0400
+./tests/test_trip.rb	Mon, 05 Oct 2015 00:51:51 -0400
+./tests/test_drivinghistory.rb	Mon, 05 Oct 2015 00:35:19 -0400
+./bin/app.rb	Mon, 05 Oct 2015 10:50:16 -0400
+./data/testinput2.txt	Mon, 05 Oct 2015 11:12:12 -0400
+./data/testinput.txt	Sun, 04 Oct 2015 12:03:48 -0400
+./lib/drivinghistory.rb	Mon, 05 Oct 2015 00:04:47 -0400
+./lib/drivinghistory/driver.rb	Sun, 04 Oct 2015 23:54:57 -0400
+./lib/drivinghistory/trip.rb	Sun, 04 Oct 2015 23:43:32 -0400

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestDriver - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Test::Unit::TestCase
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-teardown">#teardown</a>
+    
+    <li ><a href="#method-i-test_avg_speed">#test_avg_speed</a>
+    
+    <li ><a href="#method-i-test_discard_trip_outliers">#test_discard_trip_outliers</a>
+    
+    <li ><a href="#method-i-test_driver_trips">#test_driver_trips</a>
+    
+    <li ><a href="#method-i-test_init">#test_init</a>
+    
+    <li ><a href="#method-i-test_miles_driven">#test_miles_driven</a>
+    
+    <li ><a href="#method-i-test_report">#test_report</a>
+    
+    <li ><a href="#method-i-test_time_driven">#test_time_driven</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestDriver">
+  <h1 id="class-TestDriver" class="class">
+    class TestDriver
+  </h1>
+
+  <section class="description">
+    
+<p>This class tests functionality of the <a href="Driver.html">Driver</a>
+class and it&#39;s methods</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Defines precursor setup for all other <a href="Driver.html">Driver</a>
+tests</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="Driver.html">Driver</a>, named “Alex”</p>
+</li><li>
+<p>Create 2 new <a href="Trip.html">Trip</a> associated with the <a
+href="Driver.html">Driver</a></p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+  <span class="ruby-ivar">@alex</span> = <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;53.4&quot;</span>)
+  <span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;14:35&quot;</span>, <span class="ruby-string">&quot;68.3&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-teardown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">teardown</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Post-test method, not required</p>
+          
+          
+
+          
+          <div class="method-source-code" id="teardown-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">teardown</span>
+  <span class="ruby-comment"># empty</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_avg_speed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_avg_speed</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> avg_speed function</p>
+<ul><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> created during setup has an average
+speed of 61 mph</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_avg_speed-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_avg_speed</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">avg_speed</span>, <span class="ruby-value">61</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_discard_trip_outliers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_discard_trip_outliers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> discard_trip_outliers function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="Driver.html">Driver</a>, named “Alex”</p>
+</li><li>
+<p>Create 3 new <a href="Trip.html">Trip</a>, two of which fall outside the
+outlier boundary designated to be &lt; 5 mph and &gt; 100 mph and add them
+to the <a href="Driver.html">Driver</a></p>
+</li><li>
+<p>Call discard_trip_outliers</p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>Only one <a href="Trip.html">Trip</a> remains</p>
+</li><li>
+<p>The remaining <a href="Trip.html">Trip</a> lies within the outlier
+boundaries</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_discard_trip_outliers-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_discard_trip_outliers</span>
+  <span class="ruby-identifier">alex</span> = <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;3.4&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;13:35&quot;</span>, <span class="ruby-string">&quot;14:35&quot;</span>, <span class="ruby-string">&quot;68.3&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;14:35&quot;</span>, <span class="ruby-string">&quot;15:35&quot;</span>, <span class="ruby-string">&quot;105.2&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">discard_trip_outliers</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span>.<span class="ruby-identifier">length</span>, <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">avg_speed</span>, <span class="ruby-value">68.3</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_driver_trips" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_driver_trips</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> <a
+href="TestDriver.html#method-i-test_driver_trips">#test_driver_trips</a>
+function</p>
+<ul><li>
+<p><strong>Tasks</strong>    :</p>
+<ul><li>
+<p>Create a new <a href="Driver.html">Driver</a> object, named Alex</p>
+</li><li>
+<p>Create 2 new <a href="Trip.html">Trip</a> objects for the <a
+href="Driver.html">Driver</a></p>
+</li></ul>
+</li><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> has 2 trips with the proper names</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_driver_trips-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_driver_trips</span>
+  <span class="ruby-identifier">alex</span> = <span class="ruby-constant">Driver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;12:35&quot;</span>, <span class="ruby-string">&quot;13:36&quot;</span>, <span class="ruby-string">&quot;75.1&quot;</span>)
+  <span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Trip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Alex&quot;</span>, <span class="ruby-string">&quot;08:01&quot;</span>, <span class="ruby-string">&quot;08:32&quot;</span>, <span class="ruby-string">&quot;31.4&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">driver</span>, <span class="ruby-string">&quot;Alex&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">alex</span>.<span class="ruby-identifier">trips</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">driver</span>, <span class="ruby-string">&quot;Alex&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_init</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> initialize function</p>
+<ul><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> created during setup is named “Alex”</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_init-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_init</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Alex&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_miles_driven" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_miles_driven</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> miles_driven function</p>
+<ul><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> created during setup has driven 122
+miles</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_miles_driven-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_miles_driven</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">miles_driven</span>, <span class="ruby-value">122</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> report function</p>
+<ul><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> created during setup generates a
+report string that looks like “Alex: 122 miles @ 61 mph”</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_report-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_report</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">report</span>, <span class="ruby-string">&quot;Alex: 122 miles @ 61 mph&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_time_driven" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_time_driven</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests the <a href="Driver.html">Driver</a> time_driven function</p>
+<ul><li>
+<p><strong>Assert</strong>    :</p>
+<ul><li>
+<p>The <a href="Driver.html">Driver</a> created during setup has driven for
+120 minutes</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="test_time_driven-source">
+            <pre><span class="ruby-comment"># File tests/test_driver.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_time_driven</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@alex</span>.<span class="ruby-identifier">time_driven</span>, <span class="ruby-value">120</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
